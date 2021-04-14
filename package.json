@@ -1,0 +1,33 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@storybook/addon-actions": "^6.2.8",
+    "@storybook/addon-essentials": "^6.2.8",
+    "@storybook/addon-links": "^6.2.8",
+    "@storybook/react": "^6.2.8",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "lerna": "^4.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.13.14",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "bootstrap": "lerna bootstrap && npm run build",
+    "build:cjs": "cross-env BABEL_ENV=cjs lerna exec --ignore playground --stream -- babel src --out-dir dist --root-mode upward",
+    "build:esm": "cross-env BABEL_ENV=esm lerna exec --ignore playground --stream -- babel src --out-dir esm --root-mode upward",
+    "build": "npm run build:cjs && npm run build:esm",
+    "postinstall": "npm run bootstrap"
+  }
+}

@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas, Description } from "@storybook/addon-docs/blocks";
+import { AnotherButton } from "./AnotherButton";
+
+<Meta title="AnotherButton" component={AnotherButton} />
+
+# AnotherButton
+
+<Description />
+
+<Canvas>
+  <Story name="Contained">
+    <AnotherButton variant="contained">Danger</AnotherButton>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={AnotherButton} />

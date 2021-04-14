@@ -1,0 +1,63 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  Description,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import { useState } from "react";
+import { ExpandButton } from "./ExpandButton";
+
+<Meta title="ExpandButton" component={ExpandButton} />
+
+# ExpandButton
+
+<Description />
+
+<Canvas>
+  <Story name="More">
+    {() => {
+      const [expanded, setExpanded] = useState(false);
+      return (
+        <ExpandButton
+          expanded={expanded}
+          onClick={() => setExpanded((expanded) => !expanded)}
+          label="Expand"
+        />
+      );
+    }}
+  </Story>
+  <Story name="Less">
+    {() => {
+      const [expanded, setExpanded] = useState(false);
+      return (
+        <ExpandButton
+          arrow="less"
+          expanded={expanded}
+          onClick={() => setExpanded((expanded) => !expanded)}
+          label="Expand"
+        />
+      );
+    }}
+  </Story>
+  <Story name="Primary">
+    {() => {
+      const [expanded, setExpanded] = useState(false);
+      return (
+        <ExpandButton
+          color="primary"
+          expanded={expanded}
+          onClick={() => setExpanded((expanded) => !expanded)}
+          label="Expand"
+        />
+      );
+    }}
+  </Story>
+  <Story name="Disabled">
+    <ExpandButton disabled label="Disabled" />
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={ExpandButton} />

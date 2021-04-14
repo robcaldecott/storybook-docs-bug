@@ -1,4 +1,10 @@
-import { Meta, Story, Canvas, Description } from "@storybook/addon-docs/blocks";
+import {
+  Meta,
+  Story,
+  Canvas,
+  Description,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
 import { AnotherButton } from "./AnotherButton";
 
 <Meta title="AnotherButton" component={AnotherButton} />
@@ -8,8 +14,8 @@ import { AnotherButton } from "./AnotherButton";
 <Description />
 
 <Canvas>
-  <Story name="Contained">
-    <AnotherButton variant="contained">Danger</AnotherButton>
+  <Story name="Test">
+    <AnotherButton />
   </Story>
 </Canvas>
 
